@@ -1,11 +1,11 @@
 <?php
 
-namespace Modules\Order\Provider;
+namespace Modules\Payment\Provider;
 
 use Illuminate\Support\ServiceProvider;
 use RouteServiceProvider;
 
-class OrderServiceProvider extends ServiceProvider
+class PaymentServiceProvider extends ServiceProvider
 {
 
     public function boot()

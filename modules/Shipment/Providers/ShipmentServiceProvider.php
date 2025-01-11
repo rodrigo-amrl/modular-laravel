@@ -5,7 +5,7 @@ namespace Modules\Order\Provider;
 use Illuminate\Support\ServiceProvider;
 use RouteServiceProvider;
 
-class OrderServiceProvider extends ServiceProvider
+class ShipmentServiceProvider extends ServiceProvider
 {
 
     public function boot()
