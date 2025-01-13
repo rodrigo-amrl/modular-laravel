@@ -1,19 +1,18 @@
 <?php
 
-namespace Modules\Payment\Providers;
+namespace Modules\Product\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
-class PaymentServiceProvider extends ServiceProvider
+class ProductServiceProvider extends ServiceProvider
 {
 
     public function boot()
     {
 
         $this->loadMigrationsFrom(paths: __DIR__ . "../../Database/Migrations");
-        $this->mergeConfigFrom(path: __DIR__ . "../../config.php", key: "payment");
+        $this->mergeConfigFrom(path: __DIR__ . "../../config.php", key: "product");
 
         $this->app->register(provider: RouteServiceProvider::class);
-
     }
 }

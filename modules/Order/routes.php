@@ -1,5 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Modules\Order\Models\Order;
 
-Route::get('order-test', action: fn() => 'Hello!');
+Route::middleware('auth')->group(function () {
+    Route::get('orders/{order}', function (Order $order) {
+        return $order;
+    })->name('orders.show');
+});
