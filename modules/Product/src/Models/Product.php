@@ -4,7 +4,7 @@ namespace Modules\Product\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Modules\Product\Database\Factories\ProductFactory;
+use Modules\Product\Database\factories\ProductFactory;
 
 class Product extends Model
 {
@@ -16,8 +16,8 @@ class Product extends Model
         'stock',
     ];
 
-    public static function factory(): ProductFactory
+    protected static function newFactory(): ProductFactory
     {
-        return ProductFactory::new();
+        return new ProductFactory();
     }
 }
