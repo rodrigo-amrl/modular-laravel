@@ -1,10 +1,11 @@
 <?php
 
-namespace Modules\Order\Checkout;
+namespace Modules\Order\Http\Controllers;
 
 use Illuminate\Http\JsonResponse;
 use Illuminate\Validation\ValidationException;
-use Modules\Order\Contracts\PendingPayment;
+use Modules\Order\Actions\PurchaseItems;
+use Modules\Order\DTOs\PendingPayment;
 use Modules\Order\Http\Requests\CheckoutRequest;
 use Modules\Payment\Exceptions\PaymentFailedException;
 use Modules\Payment\PaymentGateway;
@@ -16,8 +17,7 @@ class CheckoutController
     public function __construct(
         protected PurchaseItems $purchaseItems,
         protected PaymentGateway $paymentGateway
-    ) {
-    }
+    ) {}
 
     public function __invoke(CheckoutRequest $request): JsonResponse
     {
