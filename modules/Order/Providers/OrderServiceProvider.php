@@ -2,6 +2,7 @@
 
 namespace Modules\Order\Providers;
 
+use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
 
 class OrderServiceProvider extends ServiceProvider
@@ -14,10 +15,10 @@ class OrderServiceProvider extends ServiceProvider
         $this->mergeConfigFrom(path: __DIR__ . "../../config.php", key: "order");
 
         $this->app->register(provider: RouteServiceProvider::class);
-        
-        $this->loadViewsFrom(__DIR__ . '/../../Ui/Views', 'order');
 
-        Blade::anonymousComponentPath(__DIR__ . '/../../Ui/Views/components', 'order');
+        $this->loadViewsFrom(__DIR__ . '../../Ui/Views', 'order');
+
+        Blade::anonymousComponentPath(__DIR__ . '../../Ui/Views/components', 'order');
         Blade::componentNamespace('Modules\\Order\\Ui\\ViewComponents', 'order');
     }
 }
